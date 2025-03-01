@@ -16,7 +16,7 @@ main.login {
     display: block;
     justify-self: center;
     text-align: center;
-    margin-top: 25%;
+    margin-top: 10%;
     background-color: rgba(255, 136, 0, 0.891);
     padding: 2em;
     border-width: 0.5em;
@@ -113,7 +113,7 @@ main.proj-page {
     margin: 5px auto;
     padding: 2em;
     border: 5px solid #888;
-    width: 80%; 
+    width: 50%; 
   }
 
   .text_input input {
@@ -136,11 +136,16 @@ main.proj-page {
     font-size: smaller;
  }
 
+ .modal-btn .btn:hover {
+    background-color: rgba(255, 136, 0, 0.891);
+    cursor: pointer;
+ }
+
 /* The Close Button */
 .close {
     /* Position it in the top right corner outside of the modal */
     position: absolute;
-    right: 25px;
+    right: 20%;
     top: 0;
     color: #000;
     font-size: 35px;

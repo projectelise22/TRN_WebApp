@@ -1,64 +1,75 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>"Projects Main Page"</title>
-        <link href="css/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="main.html">Home</a></li>
-                    <li><a href="main_sub_guide.html">Guide</a></li>
-                    <li><a href="User">User</a></li>
-                    <li><a href="Log-Out">Log Out</a></li>
-                </ul>
-            </nav>
-        </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Main Page</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
 
-        <main class="proj-page">
-            <h1>Test Case Creator</h1>
-            <section id="projects">
-                <h2>📙 Projects</h2>
-                <ul>
-                    <li><a href="#" onclick="openCreateProjWindow()">Add a new project</a></li>
-                </ul>
-                <!--Modal: Create Project-->
-                <div id="new-proj" class="modal-win">
-                    <!--Close Window-->
-                    <span class="close" onclick="closeModal()" title="Close Modal">&times;</span>
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="main_sub_guide.html">Guide</a></li>
+                <li><a href="User">User</a></li>
+                <li><a href="Log-Out">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                    <!--New Project Window Content-->
+    <main class="proj-page">
+        <h1>Test Case Creator</h1>
+
+        <section id="projects">
+            <h2>📙 Projects</h2>
+            <ul>
+                <li><a href="#" onclick="openCreateProjWindow()">Add a new project</a></li>
+            </ul>
+
+            <!-- Modal: Create Project -->
+            <div id="new-proj" class="modal-win" style="display: none;">
+                <span class="close" onclick="closeModal()" title="Close Modal">&times;</span>
+
+                <!-- New Project Form -->
+                <form id="proj-form" method="POST">
                     <div id="new-proj-content" class="modal-new-proj">
                         <h3>📋 Create a New Project</h3>
                         <div class="text_input">
-                            <label>Title:</label>
-                            <input class="text_title" type="text">
-                            <label>Description:</label>
-                            <input class="text_desc" type="text">
+                            <label for="proj-name">Project Name:</label>
+                            <input id="proj-name" name="projName" class="text_title" type="text" required>
+                            <label for="proj-desc">Description:</label>
+                            <input id="proj-desc" name="projDesc" class="text_desc" type="text" required>
                         </div>
                         <div class="modal-btn">
-                            <button id="create" class="btn">Create</button>
-                            <button id="cancel" class="btn">Cancel</button>
+                            <button id="create" class="btn" type="submit">Create</button>
+                            <button id="cancel" class="btn" type="button" onclick="closeModal()">Cancel</button>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section id="guide">
-                <h2>🤔 Guide on how to use</h2>
-                <ul>
-                    <li><a href="main_sub_guide.html#create-proj">Creating a new project</a></li>
-                    <li><a href="main_sub_guide.html#add-tc">Adding testcases</a></li>
-                    <li><a href="main_sub_guide.html#update-tc">Updating testcases</a></li>
-                    <li><a href="main_sub_guide.html#delete-tc">Deleting testcases</a></li>
-                    <li><a href="main_sub_guide.html#list-tc">Listing testcases</a></li>
-                </ul>
-            </section>
-        </main>
+                </form>
 
-        <footer>
-            <p>This webpage is made for training by dolly</p>
-        </footer>
-    </body>
+                <p id="successMessage" style="display: none; color: green;">✅ Project Created Successfully!</p>
+            </div>
+        </section>
+
+        <!-- Guide Section (Preserved) -->
+        <section id="guide">
+            <h2>🤔 Guide on how to use</h2>
+            <ul>
+                <li><a href="main_sub_guide.html#create-proj">Creating a new project</a></li>
+                <li><a href="main_sub_guide.html#add-tc">Adding testcases</a></li>
+                <li><a href="main_sub_guide.html#update-tc">Updating testcases</a></li>
+                <li><a href="main_sub_guide.html#delete-tc">Deleting testcases</a></li>
+                <li><a href="main_sub_guide.html#list-tc">Listing testcases</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>This webpage is made for training by dolly</p>
+    </footer>
+
     <script src="js/script.js"></script>
+</body>
 </html>
